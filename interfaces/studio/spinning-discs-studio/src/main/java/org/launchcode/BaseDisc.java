@@ -1,25 +1,80 @@
 package org.launchcode;
 
-public abstract class SpinDisc {
+import java.time.LocalDate;
+import java.util.Date;
+
+public abstract class BaseDisc {
     private String spinDirection;
     private Double spinSpeed;
     private String mediaData;
     private String mediaName;
     private Double mediaLength;
-    private Double mediaReleaseDate;
+    private String mediaReleaseDate;
+
+    public BaseDisc(String spinDirection, Double spinSpeed, String mediaData, String mediaName, Double mediaLength, String mediaReleaseDate) {
+        this.spinDirection = spinDirection;
+        this.spinSpeed = spinSpeed;
+        this.mediaData = mediaData;
+        this.mediaName = mediaName;
+        this.mediaLength = mediaLength;
+        this.mediaReleaseDate = mediaReleaseDate;
+    }
+
+    public String getSpinDirection() {
+        return spinDirection;
+    }
+
+    public void setSpinDirection(java.lang.String spinDirection) {
+        this.spinDirection = spinDirection;
+    }
+
+    public Double getSpinSpeed() {
+        return spinSpeed;
+    }
+
+    public void setSpinSpeed(Double spinSpeed) {
+        this.spinSpeed = spinSpeed;
+    }
+
+    public void setMediaData(String mediaData) {
+        this.mediaData = mediaData;
+    }
+
+    public void setMediaName(String mediaName) {
+        this.mediaName = mediaName;
+    }
+
+    public void setMediaLength(Double mediaLength) {
+        this.mediaLength = mediaLength;
+    }
+
+    public void setMediaReleaseDate(String mediaReleaseDate) {
+        this.mediaReleaseDate = mediaReleaseDate;
+    }
+
+    public String getMediaData() {
+        return mediaData;
+    }
+
+    public String getMediaName() {
+        return mediaName;
+    }
+
+    public Double getMediaLength() {
+        return mediaLength;
+    }
+
+    public String getMediaReleaseDate() {
+        return mediaReleaseDate;
+    }
 
 
-    public void spinDisc(String spinDirection, Double spinSpeed){
-        System.out.println("Spin to the"+ spinDirection+ "at "+ spinSpeed +"rotations a second");
-    };
     public void storeData(String mediaData){
         System.out.println("Data stored Successfully: " + mediaData);
     };
-    public void infoReport(String mediaName, Double mediaLength, Double mediaReleaseDate ){
+    public void infoReport(){
         System.out.println("Information Report: " +
-                "Name: "+ mediaName + "Length: "+mediaLength+ "Release Date: "+ mediaReleaseDate);
+                "Name: "+ this.mediaName + " Length: "+this.mediaLength+ " Release Date: "+ this.mediaReleaseDate);
     };
-    public void playMedia(){
 
-    };
 }
